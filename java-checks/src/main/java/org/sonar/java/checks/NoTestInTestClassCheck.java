@@ -47,7 +47,7 @@ public class NoTestInTestClassCheck extends IssuableSubscriptionVisitor {
 
   private static final Predicate<SymbolMetadata.AnnotationInstance> PREDICATE_ANNOTATION_TEST_OR_UNKNOWN = input -> {
     Type type = input.symbol().type();
-    return type.isUnknown() || type.is("org.junit.Test") || type.is("org.testng.annotations.Test");
+    return type.isUnknown() || type.is("org.junit.Test") || type.is("org.testng.annotations.Test") || type.is("org.junit.jupiter.api.Test");
   };
 
   @Override
